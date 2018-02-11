@@ -54,7 +54,7 @@ public class GeneratedFileHttpMessageConverter extends AbstractHttpMessageConver
 
     @Override
     protected void addDefaultHeaders(HttpHeaders headers, GeneratedFile generatedFile, MediaType contentType) throws IOException {
-        super.addDefaultHeaders(headers, generatedFile, contentType);
+        super.addDefaultHeaders(headers, generatedFile, generatedFile.getMediaType());
         headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + generatedFile.getFilename());
     }
 

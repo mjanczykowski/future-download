@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StreamUtils;
 
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
@@ -35,6 +36,6 @@ public class ReportProducerImpl implements ReportProducer {
 
         });
 
-        return new GeneratedFile("file-name-" + LocalDateTime.now().toString() + ".txt", MediaType.APPLICATION_OCTET_STREAM, futureData);
+        return new GeneratedFile("file-name-" + LocalDateTime.now().toString() + ".txt", MediaType.TEXT_PLAIN, futureData);
     }
 }
